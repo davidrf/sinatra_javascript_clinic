@@ -1,1 +1,22 @@
-<h1><%= @title %></h1>
+<h1>Puppy News</h1>
+
+<img src="/images/puppy0.jpg" alt="" />
+
+<h3>News</h3>
+<ol>
+  <% @news_articles.each do |article| %>
+    <li>
+      <strong><%= article.title %></strong>
+      <p><%= article.body %></p>
+    </li>
+  <% end %>
+</ol>
+
+<h3>Add A New Article</h3>
+<form action="/news" method="post">
+  <label for="title">Title</label>
+  <input type="text" name="news_article[title]" id="title" value="<%= @news_article.title %>" />
+  <label for="body">Body</label>
+  <input type="text" name="news_article[body]" id="body" value="<%= @news_article.body %>" />
+  <input type="submit"/>
+</form>
