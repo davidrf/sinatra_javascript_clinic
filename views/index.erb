@@ -13,6 +13,8 @@
 </ol>
 
 <h3>Add A New Article</h3>
+<ul class="errors"></ul>
+
 <form action="/news" method="post">
   <label for="title">Title</label>
   <input type="text" name="news_article[title]" id="title" value="<%= @news_article.title %>" />
